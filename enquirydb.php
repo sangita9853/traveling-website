@@ -1,15 +1,15 @@
 <?php
 
-$con = mysqli_connect('localhost' ,'root');
+$conn = mysqli_connect('localhost' ,'root');
 
-if($con){
-        echo "Connection successful";
+if($conn){
+        echo "Connection is successful";
 }
 else{
-       echo "No connection";
+       echo "There is No connection";
 }
 
-mysqli_select_db($con, 'travel1');
+mysqli_select_db($conn, 'travel1');
 
 $user = $_POST['user'];
 $email = $_POST['email'];
@@ -20,7 +20,7 @@ $query = "insert into enquirydb (user, email,mobile,message)
 values ('$user','$email','$mobile','$message')";
 
 echo "$query";
-mysqli_query($con,$query);
+mysqli_query($conn,$query);
 header('location:index.php');
 
 ?>
